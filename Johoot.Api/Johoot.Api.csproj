@@ -8,5 +8,11 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Johoot.Application\Johoot.Application.csproj" />
+    <ProjectReference Include="..\Johoot.Domain\Johoot.Domain.csproj" />
+    <ProjectReference Include="..\JoHoot.Infrastructure\Johoot.Infrastructure.csproj" />
+  </ItemGroup>
+
 
 </Project>

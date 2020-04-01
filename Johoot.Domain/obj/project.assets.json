@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    ".NETCoreApp,Version=v3.1": {}
+    ".NETCoreApp,Version=v3.1": {
+      "Johoot.Share/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/Johoot.Share.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Johoot.Share.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "Johoot.Share/1.0.0": {
+      "type": "project",
+      "path": "../Johoot.Share/Johoot.Share.csproj",
+      "msbuildProject": "../Johoot.Share/Johoot.Share.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    ".NETCoreApp,Version=v3.1": []
+    ".NETCoreApp,Version=v3.1": [
+      "Johoot.Share >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\jlamch\\.nuget\\packages\\": {},
@@ -39,7 +58,11 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\jlamch\\source\\repos\\Johoot\\Johoot.Share\\Johoot.Share.csproj": {
+              "projectPath": "C:\\Users\\jlamch\\source\\repos\\Johoot\\Johoot.Share\\Johoot.Share.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
