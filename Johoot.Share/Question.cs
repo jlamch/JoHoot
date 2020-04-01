@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 
 namespace Johoot.Data
@@ -11,6 +10,7 @@ namespace Johoot.Data
         public List<Answer> Answers { get; set; }
         public QuestionOptions Options { get; set; }
         public string ImageUri { get; set; }
+        public long Id { get; set; }
     }
 
     public class QuestionOptions
@@ -19,16 +19,18 @@ namespace Johoot.Data
         public bool Open { get; set; }
     }
 
-    public class Answer 
+    public class Answer
     {
         public string Text { get; set; }
         public bool? IsCorrect { get; set; }
+        public long Id { get; set; }
     }
 
     public class Quize
     {
+        public long Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public List<Question> Questions { get; set; }
-    }  
+    }
 }
