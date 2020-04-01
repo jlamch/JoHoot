@@ -331,3 +331,5 @@ ASALocalRun/
 .mfractor/
 
 .DS_Store
+
+*.cache
