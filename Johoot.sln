@@ -3,7 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29911.84
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Johoot", "Johoot\Johoot.csproj", "{9F6683DE-8742-414A-AA29-C797340C150F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Johoot", "Johoot\Johoot.csproj", "{9F6683DE-8742-414A-AA29-C797340C150F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Johoot.ComponentLibrary", "Johoot.ComponentLibrary\Johoot.ComponentLibrary.csproj", "{5A977590-2D90-414F-AD09-E0E168B6CEA8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Johoot.Api", "Johoot.Api\Johoot.Api.csproj", "{E5514048-6DBC-465D-8CEB-AFCBC1D944A5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Johoot.Share", "Johoot.Share\Johoot.Share.csproj", "{0F14CC89-E6C6-46D7-AE17-92DF62D6B198}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Johoot.Infrastructure", "JoHoot.Infrastructure\Johoot.Infrastructure.csproj", "{F8C771AD-6D68-42E4-823C-09BD59AE8711}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Johoot.Application", "Johoot.Application\Johoot.Application.csproj", "{2FBDB019-563C-46FA-BA80-1EAF0AD35040}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Johoot.Domain", "Johoot.Domain\Johoot.Domain.csproj", "{5B25A642-511E-4CE5-AC3D-1AE612541B58}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{322B7B01-7AE2-4FB4-88D3-A72000BE2B16}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +29,30 @@ Global
 		{9F6683DE-8742-414A-AA29-C797340C150F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9F6683DE-8742-414A-AA29-C797340C150F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9F6683DE-8742-414A-AA29-C797340C150F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A977590-2D90-414F-AD09-E0E168B6CEA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A977590-2D90-414F-AD09-E0E168B6CEA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A977590-2D90-414F-AD09-E0E168B6CEA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A977590-2D90-414F-AD09-E0E168B6CEA8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5514048-6DBC-465D-8CEB-AFCBC1D944A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5514048-6DBC-465D-8CEB-AFCBC1D944A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5514048-6DBC-465D-8CEB-AFCBC1D944A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5514048-6DBC-465D-8CEB-AFCBC1D944A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F14CC89-E6C6-46D7-AE17-92DF62D6B198}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F14CC89-E6C6-46D7-AE17-92DF62D6B198}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F14CC89-E6C6-46D7-AE17-92DF62D6B198}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F14CC89-E6C6-46D7-AE17-92DF62D6B198}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8C771AD-6D68-42E4-823C-09BD59AE8711}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8C771AD-6D68-42E4-823C-09BD59AE8711}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8C771AD-6D68-42E4-823C-09BD59AE8711}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8C771AD-6D68-42E4-823C-09BD59AE8711}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2FBDB019-563C-46FA-BA80-1EAF0AD35040}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FBDB019-563C-46FA-BA80-1EAF0AD35040}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FBDB019-563C-46FA-BA80-1EAF0AD35040}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FBDB019-563C-46FA-BA80-1EAF0AD35040}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B25A642-511E-4CE5-AC3D-1AE612541B58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B25A642-511E-4CE5-AC3D-1AE612541B58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B25A642-511E-4CE5-AC3D-1AE612541B58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B25A642-511E-4CE5-AC3D-1AE612541B58}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
