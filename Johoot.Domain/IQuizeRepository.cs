@@ -8,10 +8,10 @@ namespace Johoot.Domain
     {
         Task<IList<Quize>> GetAll();
 
-        Task<Quize> GetQuize(long id);
+        Task<Quize> FindById(long id);
 
-        Task<Quize> CreateQuize(Quize item);
+        Task<Quize> Create(Quize item);
 
-        Task<Quize> UpdateQuize(Quize item);
+        Task<Quize> Update(Quize item);
     }
 }

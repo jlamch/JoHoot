@@ -9,46 +9,46 @@ namespace Johoot.Api.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class QuizeDefinitionController : ControllerBase
+    public class QuestionDefinitionController : ControllerBase
     {
-        private readonly ILogger<QuizeDefinitionController> _logger;
-        private readonly IQuizeRepository _repository;
+        private readonly ILogger<QuestionDefinitionController> _logger;
+        private readonly IQuestionRepository _repository;
 
-        public QuizeDefinitionController(
-            ILogger<QuizeDefinitionController> logger,
-            IQuizeRepository repository)
+        public QuestionDefinitionController(
+            ILogger<QuestionDefinitionController> logger,
+            IQuestionRepository repository)
         {
             _logger = logger;
             _repository = repository;
         }
 
         [HttpGet]
-        public async Task<ActionResult<IList<Quize>>> GetAll()
+        public async Task<ActionResult<IList<Question>>> GetAll()
         {
             return Ok(await _repository.GetAll());
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<Quize>> Get(long id)
+        public async Task<ActionResult<Question>> Get(long id)
         {
             return Ok(await _repository.FindById(id));
         }
 
 
         [HttpPost]
-        public async Task<ActionResult<Quize>> Create(Quize item)
+        public async Task<ActionResult<Question>> Create(Question item)
         {
             //do some conversion from dto? no we use shared model for now
 
             var created = await _repository.Create(item);
             return CreatedAtAction(
-                nameof(Quize),
+                nameof(Question),
                 new { id = created.Id },
                 created);
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> Update(long id, Quize item)
+        public async Task<IActionResult> Update(long id, Question item)
         {
             if (id != item.Id)
             {
