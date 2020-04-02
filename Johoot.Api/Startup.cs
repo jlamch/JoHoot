@@ -24,6 +24,11 @@ namespace Johoot.Api
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "My API", Version = "v1" });
             });
+
+            //services.AddDbContext<JohootContext>(cfg =>
+            //{
+            //    cfg.UseSqlServer(Configuration.GetConnectionString("DefaultDbConnection"));
+            //});
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
