@@ -7,61 +7,61 @@ using System.Threading.Tasks;
 
 namespace Johoot.Api.Controllers
 {
-    [ApiController]
-    [Route("[controller]")]
-    public class QuizeDefinitionController : ControllerBase
+  [ApiController]
+  [Route("[controller]")]
+  public class QuizeDefinitionController : ControllerBase
+  {
+    private readonly ILogger<QuizeDefinitionController> _logger;
+    private readonly IQuizeRepository _repository;
+
+    public QuizeDefinitionController(
+        ILogger<QuizeDefinitionController> logger,
+        IQuizeRepository repository)
     {
-        private readonly ILogger<QuizeDefinitionController> _logger;
-        private readonly IQuizeRepository _repository;
-
-        public QuizeDefinitionController(
-            ILogger<QuizeDefinitionController> logger,
-            IQuizeRepository repository)
-        {
-            _logger = logger;
-            _repository = repository;
-        }
-
-        [HttpGet]
-        public async Task<ActionResult<IList<Quize>>> GetAll()
-        {
-            return Ok(await _repository.GetAll());
-        }
-
-        [HttpGet("{id}")]
-        public async Task<ActionResult<Quize>> Get(long id)
-        {
-            return Ok(await _repository.FindById(id));
-        }
-
-
-        [HttpPost]
-        public async Task<ActionResult<Quize>> Create(Quize item)
-        {
-            //do some conversion from dto? no we use shared model for now
-
-            var created = await _repository.Create(item);
-            return CreatedAtAction(
-                nameof(Quize),
-                new { id = created.Id },
-                created);
-        }
-
-        [HttpPut("{id}")]
-        public async Task<IActionResult> Update(long id, Quize item)
-        {
-            if (id != item.Id)
-            {
-                return BadRequest();
-            }
-
-            var updated = await _repository.Update(item);
-            if (updated == null)
-            {
-                return NotFound();
-            }
-
-            return NoContent();
-        }
+      _logger = logger;
+      _repository = repository;
     }
+
+    [HttpGet]
+    public async Task<ActionResult<IList<Quize>>> GetAll()
+    {
+      return Ok(await _repository.GetAll());
+    }
+
+    [HttpGet("{id}")]
+    public async Task<ActionResult<Quize>> Get(long id)
+    {
+      return Ok(await _repository.FindById(id));
+    }
+
+
+    [HttpPost]
+    public ActionResult<Quize> Create(Quize item)
+    {
+      //do some conversion from dto? no we use shared model for now
+
+      var created = _repository.Create(item);
+      return CreatedAtAction(
+          nameof(Quize),
+          new { id = created.Id },
+          created);
+    }
+
+    [HttpPut("{id}")]
+    public async Task<IActionResult> Update(long id, Quize item)
+    {
+      if (id != item.Id)
+      {
+        return BadRequest();
+      }
+
+      var updated = await _repository.Update(item, id);
+      if (updated == null)
+      {
+        return NotFound();
+      }
+
+      return NoContent();
+    }
+  }
 }

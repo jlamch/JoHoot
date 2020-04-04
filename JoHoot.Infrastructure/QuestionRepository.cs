@@ -1,29 +1,34 @@
 ﻿using Johoot.Data;
+using Johoot.Domain;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Johoot.Domain
+namespace Johoot.Infrastructure
 {
-    public class QuestionRepository : IQuestionRepository
+  public class QuestionRepository : GenericRepository<Question>, IQuestionRepository
+  {
+    public QuestionRepository(JohootContext context) : base(context)
     {
-        Task<IList<Question>> IQuestionRepository.GetAll()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        Task<Question> IQuestionRepository.FindById(long id)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        Task<Question> IQuestionRepository.Create(Question item)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        Task<Question> IQuestionRepository.Update(Question item)
-        {
-            throw new System.NotImplementedException();
-        }
     }
+
+    public async Task<Question> Create(Question item)
+    {
+      return await base.AddAsyn(item);
+    }
+
+    public async Task<Question> FindById(long id)
+    {
+      return await base.FindAsync(q => q.Id == id);
+    }
+
+    public async Task<Question> Update(Question item, long id)
+    {
+      return await base.UpdateAsync(item, id);
+    }
+
+    public async Task<ICollection<Question>> GetAll()
+    {
+      return await base.GetAllAsync();
+    }
+  }
 }
