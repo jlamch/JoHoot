@@ -97,14 +97,14 @@ namespace Johoot.Infrastructure.Migrations
 
             modelBuilder.Entity("Johoot.Data.Answer", b =>
                 {
-                    b.HasOne("Johoot.Data.Question", null)
+                    b.HasOne("Johoot.Data.Question", "Question")
                         .WithMany("Answers")
                         .HasForeignKey("QuestionId");
                 });
 
             modelBuilder.Entity("Johoot.Data.Question", b =>
                 {
-                    b.HasOne("Johoot.Data.Quize", null)
+                    b.HasOne("Johoot.Data.Quize", "Quize")
                         .WithMany("Questions")
                         .HasForeignKey("QuizeId");
                 });

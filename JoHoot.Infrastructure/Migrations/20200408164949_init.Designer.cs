@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Johoot.Infrastructure.Migrations
 {
     [DbContext(typeof(JohootContext))]
-    [Migration("20200402180726_Init")]
-    partial class Init
+    [Migration("20200408164949_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -99,14 +99,14 @@ namespace Johoot.Infrastructure.Migrations
 
             modelBuilder.Entity("Johoot.Data.Answer", b =>
                 {
-                    b.HasOne("Johoot.Data.Question", null)
+                    b.HasOne("Johoot.Data.Question", "Question")
                         .WithMany("Answers")
                         .HasForeignKey("QuestionId");
                 });
 
             modelBuilder.Entity("Johoot.Data.Question", b =>
                 {
-                    b.HasOne("Johoot.Data.Quize", null)
+                    b.HasOne("Johoot.Data.Quize", "Quize")
                         .WithMany("Questions")
                         .HasForeignKey("QuizeId");
                 });

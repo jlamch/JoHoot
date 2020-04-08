@@ -145,6 +145,19 @@ namespace Johoot.Infrastructure
       return query;
     }
 
+    public virtual IQueryable<T> FindByIncluding(
+      Expression<Func<T, bool>> predicate,
+      params Expression<Func<T, object>>[] includeProperties)
+    {
+      IQueryable<T> query = _context.Set<T>().Where(predicate);
+      foreach (Expression<Func<T, object>> includeProperty in includeProperties)
+      {
+        query = query.Include<T, object>(includeProperty);
+      }
+
+      return query;
+    }
+
     public virtual async Task<ICollection<T>> FindByAsync(Expression<Func<T, bool>> predicate)
     {
       return await _context.Set<T>().Where(predicate).ToListAsync();
@@ -156,7 +169,6 @@ namespace Johoot.Infrastructure
       IQueryable<T> queryable = GetAllBase();
       foreach (Expression<Func<T, object>> includeProperty in includeProperties)
       {
-
         queryable = queryable.Include<T, object>(includeProperty);
       }
 

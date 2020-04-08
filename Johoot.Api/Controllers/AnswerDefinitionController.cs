@@ -1,4 +1,5 @@
-﻿using Johoot.Data;
+﻿using Johoot.Api.DataDto;
+using Johoot.Data;
 using Johoot.Domain;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 namespace Johoot.Api.Controllers
 {
   [ApiController]
-  [Route("[controller]")]
+  [Route(nameof(Answer))]
   public class AnswerDefinitionController : ControllerBase
   {
     private readonly ILogger<AnswerDefinitionController> _logger;
@@ -34,13 +35,24 @@ namespace Johoot.Api.Controllers
       return Ok(await _repository.FindById(id));
     }
 
+    [HttpGet("find/{questionId}")]
+    public async Task<ActionResult<IList<Answer>>> GetByQuestionId(long questionId)
+    {
+      return Ok(await _repository.FindByQuestionId(questionId));
+    }
 
     [HttpPost]
-    public async Task<ActionResult<Answer>> Create(Answer item)
+    public async Task<ActionResult<Answer>> Create(AnswerDto item, long questionId)
     {
       //do some conversion from dto? no we use shared model for now
+      var na = new Answer
+      {
+        Id = item.Id,
+        IsCorrect = item.IsCorrect,
+        Text = item.Text
+      };
 
-      var created = await _repository.Create(item);
+      var created = await _repository.Create(na, questionId);
       return CreatedAtAction(
           nameof(Answer),
           new { id = created.Id },
@@ -48,14 +60,21 @@ namespace Johoot.Api.Controllers
     }
 
     [HttpPut("{id}")]
-    public async Task<IActionResult> Update(long id, Answer item)
+    public async Task<IActionResult> Update(long id, AnswerDto item)
     {
       if (id != item.Id)
       {
         return BadRequest();
       }
 
-      var updated = await _repository.Update(item, id);
+      var na = new Answer
+      {
+        Id = item.Id,
+        IsCorrect = item.IsCorrect,
+        Text = item.Text
+      };
+
+      var updated = await _repository.Update(na, id);
       if (updated == null)
       {
         return NotFound();

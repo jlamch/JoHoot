@@ -1,4 +1,5 @@
-﻿using Johoot.Data;
+﻿using Johoot.Api.DataDto;
+using Johoot.Data;
 using Johoot.Domain;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 namespace Johoot.Api.Controllers
 {
   [ApiController]
-  [Route("[controller]")]
+  [Route(nameof(Question))]
   public class QuestionDefinitionController : ControllerBase
   {
     private readonly ILogger<QuestionDefinitionController> _logger;
@@ -34,13 +35,26 @@ namespace Johoot.Api.Controllers
       return Ok(await _repository.FindById(id));
     }
 
+    [HttpGet("find/{quizeId}")]
+    public async Task<ActionResult<List<Question>>> FilterByQuize(long quizeId, bool includeAll = true)
+    {
+      return Ok(await _repository.FindByQuizeId(quizeId, includeAll));
+    }
+
 
     [HttpPost]
-    public async Task<ActionResult<Question>> Create(Question item)
+    public async Task<ActionResult<Question>> Create(QuestionDto item)
     {
-      //do some conversion from dto? no we use shared model for now
-
-      var created = await _repository.Create(item);
+      //new question object 
+      var nq = new Question
+      {
+        HasCorrectAnswer = item.HasCorrectAnswer,
+        IsOpenQuestion = item.IsOpenQuestion,
+        Points = item.Points,
+        Text = item.Text,
+        TimeLimitSeconds = item.TimeLimitSeconds
+      };
+      var created = await _repository.Create(nq, item.QuizeId);
       return CreatedAtAction(
           nameof(Question),
           new { id = created.Id },
@@ -48,14 +62,24 @@ namespace Johoot.Api.Controllers
     }
 
     [HttpPut("{id}")]
-    public async Task<IActionResult> Update(long id, Question item)
+    public async Task<IActionResult> Update(long id, QuestionDto item)
     {
       if (id != item.Id)
       {
         return BadRequest();
       }
 
-      var updated = await _repository.Update(item, id);
+      var nq = new Question
+      {
+        HasCorrectAnswer = item.HasCorrectAnswer,
+        IsOpenQuestion = item.IsOpenQuestion,
+        Points = item.Points,
+        Text = item.Text,
+        TimeLimitSeconds = item.TimeLimitSeconds,
+        Id = item.Id
+      };
+
+      var updated = await _repository.Update(nq, id);
       if (updated == null)
       {
         return NotFound();

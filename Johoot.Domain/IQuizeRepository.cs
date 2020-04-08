@@ -6,9 +6,9 @@ namespace Johoot.Domain
 {
   public interface IQuizeRepository
   {
-    Task<IList<Quize>> GetAll();
+    Task<IList<Quize>> GetAll(bool includeAll= true);
 
-    Task<Quize> FindById(long id);
+    Task<Quize> FindById(long id, bool includeAll = true);
 
     Task<Quize> Create(Quize item);
 

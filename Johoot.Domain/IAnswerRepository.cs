@@ -9,8 +9,9 @@ namespace Johoot.Domain
     Task<ICollection<Answer>> GetAll();
 
     Task<Answer> FindById(long id);
+    Task<IList<Answer>> FindByQuestionId(long questionId);
 
-    Task<Answer> Create(Answer item);
+    Task<Answer> Create(Answer item, long questionId);
 
     Task<Answer> Update(Answer item, long id);
   }

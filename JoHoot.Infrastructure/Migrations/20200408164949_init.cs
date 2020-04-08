@@ -2,7 +2,7 @@
 
 namespace Johoot.Infrastructure.Migrations
 {
-    public partial class Init : Migration
+    public partial class init : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -26,13 +26,13 @@ namespace Johoot.Infrastructure.Migrations
                 {
                     Id = table.Column<long>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    QuizeId = table.Column<long>(nullable: true),
                     TimeLimitSeconds = table.Column<int>(nullable: false),
                     Text = table.Column<string>(nullable: true),
                     Points = table.Column<int>(nullable: false),
                     HasCorrectAnswer = table.Column<bool>(nullable: false),
                     IsOpenQuestion = table.Column<bool>(nullable: false),
-                    ImageUri = table.Column<string>(nullable: true),
-                    QuizeId = table.Column<long>(nullable: true)
+                    ImageUri = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -51,9 +51,9 @@ namespace Johoot.Infrastructure.Migrations
                 {
                     Id = table.Column<long>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    QuestionId = table.Column<long>(nullable: true),
                     Text = table.Column<string>(nullable: true),
-                    IsCorrect = table.Column<bool>(nullable: true),
-                    QuestionId = table.Column<long>(nullable: true)
+                    IsCorrect = table.Column<bool>(nullable: true)
                 },
                 constraints: table =>
                 {

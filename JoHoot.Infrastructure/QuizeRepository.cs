@@ -6,31 +6,58 @@ using System.Threading.Tasks;
 
 namespace Johoot.Infrastructure
 {
-  public class QuizeRepository : IQuizeRepository
+  public class QuizeRepository : GenericRepository<Quize>, IQuizeRepository
   {
-    private readonly JohootContext _context;
+    private readonly JohootContext _joContext;
 
-    public QuizeRepository(JohootContext context)
+    public QuizeRepository(JohootContext context) : base(context)
     {
-      _context = context;
+      _joContext = context;
     }
 
     public async Task<Quize> Create(Quize item)
     {
-      var ret = _context.Quizes.Add(item);
-      await _context.SaveChangesAsync();
+      var ret = _joContext.Quizes.Add(item);
+      await _joContext.SaveChangesAsync();
       return ret.Entity;
     }
 
-    public async Task<Quize> FindById(long id)
+    public async Task<Quize> FindById(long id, bool includeAll)
     {
-      var ret = await _context.Quizes.FindAsync(id);
-      return ret;
+      if (includeAll)
+      {
+        return
+           await _joContext.Quizes
+             .Include(q => q.Questions)
+             .ThenInclude(q => q.Answers)
+             .FirstOrDefaultAsync(q => q.Id == id);
+      }
+      else
+      {
+        return
+            await _joContext.Quizes.FindAsync(id);
+
+      }
     }
 
-    public async Task<IList<Quize>> GetAll()
+    public async Task<IList<Quize>> GetAll(bool includeAll)
     {
-      return await _context.Quizes.ToListAsync();
+      if (includeAll)
+      {
+        return
+          await _joContext
+          .Quizes
+          .Include(q => q.Questions)
+          .ThenInclude(q => q.Answers)
+          .ToListAsync();
+      }
+      else
+      {
+        return
+          await _joContext
+          .Quizes
+          .ToListAsync();
+      }
     }
 
     public async Task<Quize> Update(Quize item, long id)
@@ -40,11 +67,11 @@ namespace Johoot.Infrastructure
         return null;
       }
 
-      var exist = await FindById(id);
+      var exist = await FindById(id, false);
       if (exist != null)
       {
-        _context.Entry(exist).CurrentValues.SetValues(item);
-        _context.SaveChanges();
+        _joContext.Entry(exist).CurrentValues.SetValues(item);
+        _joContext.SaveChanges();
       }
 
       return exist;

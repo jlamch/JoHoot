@@ -1,16 +1,13 @@
-using System.Collections.Generic;
-
-namespace Johoot.Data
+namespace Johoot.Api.DataDto
 {
-  public class Question
+  public class QuestionDto
   {
     public long Id { get; set; }
-    public Quize Quize { get; set; }
+    public long QuizeId { get; set; }
 
     public int TimeLimitSeconds { get; set; }
     public string Text { get; set; }
     public int Points { get; set; }
-    public List<Answer> Answers { get; set; }
 
     public bool HasCorrectAnswer { get; set; }
     public bool IsOpenQuestion { get; set; }
