@@ -20,7 +20,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{5549CF4C-E
 		docs\ProjectDocu.md = docs\ProjectDocu.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Johoot", "Johoot\Johoot.csproj", "{C022F6B0-2C6D-4341-A6CE-448EF1117310}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Johoot", "Johoot\Johoot.csproj", "{C022F6B0-2C6D-4341-A6CE-448EF1117310}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
