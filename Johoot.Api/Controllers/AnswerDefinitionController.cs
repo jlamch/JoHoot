@@ -54,7 +54,7 @@ namespace Johoot.Api.Controllers
 
       var created = await _repository.Create(na, questionId);
       return CreatedAtAction(
-          nameof(Answer),
+          nameof(this.Get),
           new { id = created.Id },
           created);
     }
