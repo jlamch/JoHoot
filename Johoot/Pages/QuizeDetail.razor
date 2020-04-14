@@ -1,9 +1,18 @@
 ﻿@page "/quizedetail/{quizeId}"
 @inherits QuizeDetailBase
 
+<div class="col-12 row">
+  <div class="col-11">
 
-<h1 class="page-title">Details for Quize @Quize.Name </h1>
-
+    <h1 class="page-title">Details for Quize @Quize.Name </h1>
+  </div>
+  <div class="col-1">
+    <a href="@($"quizeedit/{Quize.Id}")" class="btn btn-primary table-btn">
+      <i class="fas fa-edit"></i>
+    </a>
+    <div class="alert"></div>
+  </div>
+</div>
 
 <div class="col-12 row">
   <div class="col-1">

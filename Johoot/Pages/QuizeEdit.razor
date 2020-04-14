@@ -1,45 +1,53 @@
 ﻿@page "/quizeedit/{quizeId}"
 @inherits QuizeEditBase
 
-@if (!Saved)
-{
-
-  <div class="alert @StatusClass">@Message</div>
-
-  <h1 class="page-title">Details for @Quize?.Name </h1>
-
-
-  <EditForm Model="@Quize" OnValidSubmit="@HandleValidSubmit">
-
-    <DataAnnotationsValidator />
-    <ValidationSummary />
-    <div class="form-group row">
-      <label for="lastName" class="col-sm-3">Name: </label>
-      <InputText id="lastName" @bind-Value="@Quize.Name" class="form-control col-sm-8" placeholder="Enter name"></InputText>
-      <ValidationMessage class="offset-sm-3 col-sm-8" For="@(() => Quize.Name)" />
-    </div>
-
-    <div class="form-group row">
-      <label for="firstName" class="col-sm-3">Description: </label>
-      <InputText id="firstName" class="form-control col-sm-8" @bind-Value="@Quize.Description" placeholder="Enter description"></InputText>
-      <ValidationMessage class="offset-sm-3 col-sm-8" For="@(() => Quize.Description)" />
-    </div>
-
-
-    <button type="submit" class="btn btn-primary edit-btn">Save</button>
-
-    @*@if (Quize.Id> 0)
+<div class="col-12 row">
+  <div class="col-11">
+    @if (!Saved)
     {
-      <a class="btn btn-danger" @onclick="@DeleteQuzie">
-        Delete
-      </a>
-    }*@
+      @if (Quize.Id > 0)
+      {
+        <h1 class="page-title">Details for @Quize?.Name </h1>
+      }
+      else
+      {
+        <h1 class="page-title">Create new Quize</h1>
+      }
+      <div class="alert @StatusClass">@Message</div>
 
-  </EditForm>
-}
-else
-{
-  <div class="alert @StatusClass">@Message</div>
-  <a class="btn btn-outline-primary" @onclick="@NavigateToOverview">Back to overview</a>
+      <EditForm Model="@Quize" OnValidSubmit="@HandleValidSubmit">
 
-}
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+        <div class="form-group row">
+          <label for="lastName" class="col-sm-3">Name: </label>
+          <InputText id="lastName" @bind-Value="@Quize.Name" class="form-control col-sm-8" placeholder="Enter name"></InputText>
+          <ValidationMessage class="offset-sm-3 col-sm-8" For="@(() => Quize.Name)" />
+        </div>
+
+        <div class="form-group row">
+          <label for="firstName" class="col-sm-3">Description: </label>
+          <InputText id="firstName" class="form-control col-sm-8" @bind-Value="@Quize.Description" placeholder="Enter description"></InputText>
+          <ValidationMessage class="offset-sm-3 col-sm-8" For="@(() => Quize.Description)" />
+        </div>
+
+
+        <button type="submit" class="btn btn-primary edit-btn">Save</button>
+
+        @*@if (Quize.Id> 0)
+          {
+            <a class="btn btn-danger" @onclick="@DeleteQuzie">
+              Delete
+            </a>
+          }*@
+
+      </EditForm>
+    }
+    else
+    {
+      <div class="alert @StatusClass">@Message</div>
+      <a class="btn btn-outline-primary" @onclick="@NavigateToOverview">Back to overview</a>
+
+    }
+  </div>
+</div>

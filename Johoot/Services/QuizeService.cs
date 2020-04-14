@@ -42,7 +42,9 @@ namespace Johoot.Services
 
       if (response.IsSuccessStatusCode)
       {
-        return await JsonSerializer.DeserializeAsync<Quize>(await response.Content.ReadAsStreamAsync());
+        return await JsonSerializer.DeserializeAsync<Quize>(
+          await response.Content.ReadAsStreamAsync(),
+          new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
       }
 
       return null;

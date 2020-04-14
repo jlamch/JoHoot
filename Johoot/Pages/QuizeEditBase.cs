@@ -52,12 +52,16 @@ namespace Johoot.Pages
           //StatusClass = "alert-success";
           //Message = "New Quize added successfully.";
           Saved = true;
-          Quize = addedQuize;
+          if (addedQuize.Id > 0)
+          {
+            Quize = addedQuize;
+            NavigateToOverview();
+          }
         }
         else
         {
-          //StatusClass = "alert-danger";
-          //Message = "Something went wrong adding the new Quize. Please try again.";
+          StatusClass = "alert-danger";
+          Message = "Something went wrong adding the new Quize. Please try again.";
           Saved = false;
         }
       }
@@ -67,6 +71,7 @@ namespace Johoot.Pages
         //StatusClass = "alert-success";
         //Message = "Quize updated successfully.";
         Saved = true;
+        NavigateToOverview();
       }
     }
     //protected async Task DeleteQuize()
