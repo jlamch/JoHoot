@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Johoot.Domain
+namespace Johoot.Infrastructure.Domain
 {
   public interface IQuestionRepository
   {

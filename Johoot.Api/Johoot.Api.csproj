@@ -5,13 +5,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.ApplicationInsights" Version="2.14.0" />
+    <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.14.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.0.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.0.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Johoot.Application\Johoot.Application.csproj" />
-    <ProjectReference Include="..\Johoot.Domain\Johoot.Domain.csproj" />
+    <ProjectReference Include="..\Johoot.Domain\Johoot.Infrastructure.Domain.csproj" />
     <ProjectReference Include="..\JoHoot.Infrastructure\Johoot.Infrastructure.csproj" />
   </ItemGroup>
 

@@ -28,21 +28,19 @@
   },
   "packageFolders": {
     "C:\\Users\\jlamch\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jlamch\\source\\repos\\Johoot\\Johoot.Domain\\Johoot.Domain.csproj",
-      "projectName": "Johoot.Domain",
-      "projectPath": "C:\\Users\\jlamch\\source\\repos\\Johoot\\Johoot.Domain\\Johoot.Domain.csproj",
+      "projectUniqueName": "E:\\repos\\JoHoot\\Johoot.Domain\\Johoot.Infrastructure.Domain.csproj",
+      "projectName": "Johoot.Infrastructure.Domain",
+      "projectPath": "E:\\repos\\JoHoot\\Johoot.Domain\\Johoot.Infrastructure.Domain.csproj",
       "packagesPath": "C:\\Users\\jlamch\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jlamch\\source\\repos\\Johoot\\Johoot.Domain\\obj\\",
+      "outputPath": "E:\\repos\\JoHoot\\Johoot.Domain\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\",
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "C:\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
         "C:\\Users\\jlamch\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -59,8 +57,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\jlamch\\source\\repos\\Johoot\\Johoot.Share\\Johoot.Share.csproj": {
-              "projectPath": "C:\\Users\\jlamch\\source\\repos\\Johoot\\Johoot.Share\\Johoot.Share.csproj"
+            "E:\\repos\\JoHoot\\Johoot.Share\\Johoot.Share.csproj": {
+              "projectPath": "E:\\repos\\JoHoot\\Johoot.Share\\Johoot.Share.csproj"
             }
           }
         }
@@ -88,7 +86,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -1,5 +1,5 @@
 ﻿using Johoot.Data;
-using Johoot.Domain;
+using Johoot.Infrastructure.Domain;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;

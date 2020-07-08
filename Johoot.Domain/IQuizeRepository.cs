@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Johoot.Domain
+namespace Johoot.Infrastructure.Domain
 {
   public interface IQuizeRepository
   {
-    Task<IList<Quize>> GetAll(bool includeAll= true);
+    Task<IList<Quize>> GetAll(bool includeAll = true);
 
     Task<Quize> FindById(long id, bool includeAll = true);
 

@@ -1,8 +1,9 @@
 ﻿using Johoot.Api.DataDto;
 using Johoot.Data;
-using Johoot.Domain;
+using Johoot.Infrastructure.Domain;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -17,6 +18,7 @@ namespace Johoot.Api.Controllers
 
     public QuizeDefinitionController(
         ILogger<QuizeDefinitionController> logger,
+        IOptions<JLSettingsOption> options,
         IQuizeRepository repository)
     {
       _logger = logger;

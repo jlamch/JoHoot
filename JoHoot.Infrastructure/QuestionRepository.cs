@@ -1,5 +1,5 @@
 ﻿using Johoot.Data;
-using Johoot.Domain;
+using Johoot.Infrastructure.Domain;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,6 +27,11 @@ namespace Johoot.Infrastructure
       return await base.FindAsync(q => q.Id == questionId);
     }
 
+    public async Task<Question> Update(Question item, long id)
+    {
+      return await base.UpdateAsync(item, id);
+    }
+
     public async Task<IList<Question>> FindByQuizeId(long quizeId, bool includeAll)
     {
       if (includeAll)
@@ -47,11 +52,6 @@ namespace Johoot.Infrastructure
           .Where(q => q.Quize.Id == quizeId)
           .ToListAsync();
       }
-    }
-
-    public async Task<Question> Update(Question item, long id)
-    {
-      return await base.UpdateAsync(item, id);
     }
 
     public async Task<ICollection<Question>> GetAll(bool includeAll)

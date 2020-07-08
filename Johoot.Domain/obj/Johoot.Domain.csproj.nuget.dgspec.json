@@ -1,21 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jlamch\\source\\repos\\Johoot\\Johoot.Domain\\Johoot.Domain.csproj": {}
+    "E:\\repos\\JoHoot\\Johoot.Domain\\Johoot.Domain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jlamch\\source\\repos\\Johoot\\Johoot.Domain\\Johoot.Domain.csproj": {
+    "E:\\repos\\JoHoot\\Johoot.Domain\\Johoot.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jlamch\\source\\repos\\Johoot\\Johoot.Domain\\Johoot.Domain.csproj",
+        "projectUniqueName": "E:\\repos\\JoHoot\\Johoot.Domain\\Johoot.Domain.csproj",
         "projectName": "Johoot.Domain",
-        "projectPath": "C:\\Users\\jlamch\\source\\repos\\Johoot\\Johoot.Domain\\Johoot.Domain.csproj",
+        "projectPath": "E:\\repos\\JoHoot\\Johoot.Domain\\Johoot.Domain.csproj",
         "packagesPath": "C:\\Users\\jlamch\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jlamch\\source\\repos\\Johoot\\Johoot.Domain\\obj\\",
+        "outputPath": "E:\\repos\\JoHoot\\Johoot.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
           "C:\\Users\\jlamch\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -32,8 +31,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\jlamch\\source\\repos\\Johoot\\Johoot.Share\\Johoot.Share.csproj": {
-                "projectPath": "C:\\Users\\jlamch\\source\\repos\\Johoot\\Johoot.Share\\Johoot.Share.csproj"
+              "E:\\repos\\JoHoot\\Johoot.Share\\Johoot.Share.csproj": {
+                "projectPath": "E:\\repos\\JoHoot\\Johoot.Share\\Johoot.Share.csproj"
               }
             }
           }
@@ -65,18 +64,17 @@
         }
       }
     },
-    "C:\\Users\\jlamch\\source\\repos\\Johoot\\Johoot.Share\\Johoot.Share.csproj": {
+    "E:\\repos\\JoHoot\\Johoot.Share\\Johoot.Share.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jlamch\\source\\repos\\Johoot\\Johoot.Share\\Johoot.Share.csproj",
+        "projectUniqueName": "E:\\repos\\JoHoot\\Johoot.Share\\Johoot.Share.csproj",
         "projectName": "Johoot.Share",
-        "projectPath": "C:\\Users\\jlamch\\source\\repos\\Johoot\\Johoot.Share\\Johoot.Share.csproj",
+        "projectPath": "E:\\repos\\JoHoot\\Johoot.Share\\Johoot.Share.csproj",
         "packagesPath": "C:\\Users\\jlamch\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jlamch\\source\\repos\\Johoot\\Johoot.Share\\obj\\",
+        "outputPath": "E:\\repos\\JoHoot\\Johoot.Share\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
           "C:\\Users\\jlamch\\AppData\\Roaming\\NuGet\\NuGet.Config",

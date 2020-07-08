@@ -1,5 +1,5 @@
-using Johoot.Domain;
 using Johoot.Infrastructure;
+using Johoot.Infrastructure.Domain;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -37,6 +37,10 @@ namespace Johoot.Api
         cfg.UseSqlServer(Configuration.GetConnectionString("DefaultDbConnection"));
       });
 
+      services.AddApplicationInsightsTelemetry();
+
+      services.Configure<JLSettingsOption>(Configuration.GetSection("JLSettings"));
+
       services.AddScoped<IQuizeRepository, QuizeRepository>();
       services.AddScoped<IQuestionRepository, QuestionRepository>();
       services.AddScoped<IAnswerRepository, AnswerRepository>();
@@ -61,7 +65,7 @@ namespace Johoot.Api
       }
 
       app.UseHttpsRedirection();
-
+      
       app.UseRouting();
 
       app.UseAuthorization();

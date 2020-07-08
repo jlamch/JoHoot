@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Johoot.Infrastructure", "Jo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Johoot.Application", "Johoot.Application\Johoot.Application.csproj", "{2FBDB019-563C-46FA-BA80-1EAF0AD35040}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Johoot.Domain", "Johoot.Domain\Johoot.Domain.csproj", "{5B25A642-511E-4CE5-AC3D-1AE612541B58}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Johoot.Infrastructure.Domain", "Johoot.Domain\Johoot.Infrastructure.Domain.csproj", "{5B25A642-511E-4CE5-AC3D-1AE612541B58}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{5549CF4C-EC76-4C3D-86AC-3BC40776602D}"
 	ProjectSection(SolutionItems) = preProject

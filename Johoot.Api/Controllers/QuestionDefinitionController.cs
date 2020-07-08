@@ -1,6 +1,6 @@
 ﻿using Johoot.Api.DataDto;
 using Johoot.Data;
-using Johoot.Domain;
+using Johoot.Infrastructure.Domain;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System.Collections.Generic;

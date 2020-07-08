@@ -34,7 +34,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Johoot.Domain\Johoot.Domain.csproj" />
+    <ProjectReference Include="..\Johoot.Domain\Johoot.Infrastructure.Domain.csproj" />
     <ProjectReference Include="..\Johoot.Share\Johoot.Share.csproj" />
   </ItemGroup>
 

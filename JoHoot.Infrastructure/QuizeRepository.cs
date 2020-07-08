@@ -1,16 +1,17 @@
 ﻿using Johoot.Data;
-using Johoot.Domain;
+
+using Johoot.Infrastructure.Domain;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace Johoot.Infrastructure
 {
-  public class QuizeRepository : GenericRepository<Quize>, IQuizeRepository
+  public class QuizeRepository : IQuizeRepository
   {
     private readonly JohootContext _joContext;
 
-    public QuizeRepository(JohootContext context) : base(context)
+    public QuizeRepository(JohootContext context)
     {
       _joContext = context;
     }
