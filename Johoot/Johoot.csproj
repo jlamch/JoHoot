@@ -5,10 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="OdeToCode.UseNodeModules" Version="3.0.0" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Johoot.Share\Johoot.Share.csproj" />
   </ItemGroup>
 
