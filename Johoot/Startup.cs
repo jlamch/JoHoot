@@ -43,6 +43,7 @@ namespace Johoot
       app.UseStaticFiles();
 
       app.UseRouting();
+      app.UseNodeModules();
 
       app.UseEndpoints(endpoints =>
       {
