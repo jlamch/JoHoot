@@ -3,7 +3,7 @@ using Johoot.Services;
 using Microsoft.AspNetCore.Components;
 using System.Threading.Tasks;
 
-namespace Johoot.Pages
+namespace Johoot.QuizeCrm.Pages
 {
   public class QuizeEditBase : ComponentBase
   {

@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Components;
 using System;
 using System.Threading.Tasks;
 
-namespace Johoot.Pages
+namespace Johoot.QuizeCrm.Pages
 {
   public class QuizeDetailBase : ComponentBase
   {
