@@ -1,4 +1,4 @@
-﻿using Johoot.Data;
+﻿using Johoot.QuizeCrm.ViewModels;
 using Johoot.Services;
 using Microsoft.AspNetCore.Components;
 using System.Threading.Tasks;
@@ -13,11 +13,10 @@ namespace Johoot.QuizeCrm.Pages
     [Inject]
     public NavigationManager NavigationManager { get; set; }
 
-
     [Parameter]
     public string QuizeId { get; set; }
 
-    public Quize Quize { get; set; } = new Quize();
+    public QuizeViewModel Quize { get; set; } = new QuizeViewModel();
 
     protected bool Saved;
     protected string Message = string.Empty;
@@ -32,11 +31,11 @@ namespace Johoot.QuizeCrm.Pages
       if (quizeId == 0) //new Quize is being created
       {
         //add some defaults
-        Quize = new Quize { Id = 0 };
+        Quize = new QuizeViewModel { Id = 0 };
       }
       else
       {
-        Quize = await QuizeService.GetById(quizeId);
+        Quize = await QuizeService.GetVmById(quizeId);
       }
     }
 

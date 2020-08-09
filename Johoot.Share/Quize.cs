@@ -2,11 +2,11 @@
 
 namespace Johoot.Data
 {
-    public class Quize
-    {
-        public long Id { get; set; }
-        public string Name { get; set; }
-        public string Description { get; set; }
-        public List<Question> Questions { get; set; }
-    }
+  public class Quize
+  {
+    public virtual long Id { get; set; }
+    public virtual string Name { get; set; }
+    public virtual string Description { get; set; }
+    public virtual List<Question> Questions { get; set; }
+  }
 }

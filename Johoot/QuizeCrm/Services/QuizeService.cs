@@ -1,4 +1,6 @@
-﻿using Johoot.Data;
+﻿using AutoMapper;
+using Johoot.Data;
+using Johoot.QuizeCrm.ViewModels;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
@@ -10,10 +12,12 @@ namespace Johoot.Services
   public class QuizeService : IQuizeService
   {
     private readonly HttpClient _httpClient;
+    private readonly IMapper _mapper;
 
-    public QuizeService(HttpClient httpClient)
+    public QuizeService(HttpClient httpClient, IMapper mapper)
     {
       _httpClient = httpClient;
+      _mapper = mapper;
     }
 
     public async Task<IList<Quize>> GetAll(bool includeAll = true)
@@ -57,6 +61,16 @@ namespace Johoot.Services
                  new StringContent(JsonSerializer.Serialize(item), Encoding.UTF8, "application/json");
 
       await _httpClient.PutAsync(relativeUri, bodyJson);
+    }
+
+    public async Task<QuizeViewModel> GetVmById(long id)
+    {
+      return _mapper.Map<QuizeViewModel>(await GetById(id));
+    }
+
+    public async Task<QuizeViewModel> Create(QuizeViewModel item)
+    {
+      return _mapper.Map<QuizeViewModel>(await Create(_mapper.Map<Quize>(item)));
     }
   }
 }

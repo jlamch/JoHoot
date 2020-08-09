@@ -1,3 +1,5 @@
+using AutoMapper;
+using Johoot.Configs;
 using Johoot.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -23,6 +25,8 @@ namespace Johoot
     {
       services.AddRazorPages();
       services.AddServerSideBlazor();
+      services.AddAutoMapper(typeof(MapperProfile));
+
       InitializeHttpClients(services);
     }
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -41,6 +45,7 @@ namespace Johoot
 
       app.UseHttpsRedirection();
       app.UseStaticFiles();
+
 
       app.UseRouting();
 
