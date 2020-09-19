@@ -61,6 +61,8 @@ namespace Johoot
       var host = new Uri("https://localhost:44338");
       services.AddHttpClient<IQuizeService, QuizeService>(
         client => client.BaseAddress = new Uri(host, "Question"));
+      services.AddHttpClient<IQuestionService, QuestionService>(
+        client => client.BaseAddress = new Uri(host, "Question"));
     }
 
   }
